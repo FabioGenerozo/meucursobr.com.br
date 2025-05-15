@@ -13,7 +13,7 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f7f7;
+      background: linear-gradient(135deg, #d94b1f, #f68e54);
       color: #333;
       line-height: 1.6;
     }
@@ -45,83 +45,38 @@
       opacity: 0.8;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #d9421b, #f28c1d);
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-      position: relative;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-    }
-    .btn-primary {
-      background-color: white;
-      color: #d9421b;
-      padding: 15px 40px;
-      font-size: 1.2rem;
+    /* Letreiro animado */
+    .ticker {
+      background: white;
+      color: #d94b1f;
       font-weight: 700;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(217, 66, 27, 0.6);
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 20px auto;
+      max-width: 960px;
+      border-radius: 8px;
+      padding: 10px 0;
     }
-    .btn-primary:hover {
-      background-color: #ffe4dc;
-      box-shadow: 0 8px 20px rgba(255, 228, 220, 0.8);
+    .ticker span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: tickerAnim 15s linear infinite;
+      font-size: 1.2rem;
+    }
+    @keyframes tickerAnim {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
     }
 
     main {
       max-width: 960px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    /* Letreiro animado */
-    .ticker-wrapper {
-      background: linear-gradient(90deg, #f28c1d, #d9421b);
-      color: white;
-      overflow: hidden;
-      white-space: nowrap;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(217, 66, 27, 0.6);
-      font-weight: 700;
-      font-size: 1.2rem;
-      height: 40px;
-      display: flex;
-      align-items: center;
-    }
-    .ticker {
-      display: inline-block;
-      padding-left: 100%;
-      animation: tickerAnim 15s linear infinite;
-    }
-    .ticker span {
-      margin-right: 60px;
-    }
-    @keyframes tickerAnim {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      color: #333;
     }
 
     section {
@@ -238,17 +193,13 @@
         margin-left: 0;
         margin-right: 15px;
       }
-      .ticker-wrapper {
-        font-size: 1rem;
-        height: 30px;
-      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://raw.githubusercontent.com/FabioGenerozo/meucursobr.com.br/4f90050ca41277543da499cdfc02a3cdf387328a/logo-cavaquinho-blog.png" alt="Logo Meu Curso BR" class="logo" />
+  <img src="https://cavaquinhoparainiciantes.com.br/wp-content/uploads/2021/05/logo-cavaquinho-blog.png" alt="Logo Meu Curso BR" class="logo" />
   <nav>
     <a href="#por-que-escolher">Por que escolher</a>
     <a href="#depoimentos">Depoimentos</a>
@@ -257,28 +208,18 @@
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Curso de Cavaquinho - Do Zero ao Pagode</h1>
-    <p>Aprenda cavaquinho rápido e fácil, mesmo sem experiência!</p>
-    <a href="https://pay.hotmart.com/Y46016667V?ref=X99708631N" class="btn-primary" target="_blank" rel="noopener noreferrer">Quero Aprender Agora!</a>
-  </div>
-</section>
+<!-- Letreiro animado -->
+<div class="ticker" aria-label="Informações importantes">
+  <span>
+    Garantia de 7 dias &nbsp;&nbsp; • &nbsp;&nbsp;
+    Aulas Gravadas &nbsp;&nbsp; • &nbsp;&nbsp;
+    Acesso Imediato &nbsp;&nbsp; • &nbsp;&nbsp;
+    Suporte Direto &nbsp;&nbsp; • &nbsp;&nbsp;
+    Conteúdo 100% Online &nbsp;&nbsp; • &nbsp;&nbsp;
+  </span>
+</div>
 
 <main>
-
-  <!-- Letreiro animado -->
-  <div class="ticker-wrapper" aria-label="Benefícios do curso em destaque">
-    <div class="ticker" aria-hidden="true">
-      <span>30 DIAS DE GARANTIA</span>
-      <span>AULAS GRAVADAS</span>
-      <span>ACESSO IMEDIATO</span>
-      <span>SUPORTE DEDICADOS</span>
-      <span>MATERIAL EXCLUSIVO</span>
-      <span>APRENDA NO SEU RITMO</span>
-    </div>
-  </div>
-
   <section id="por-que-escolher">
     <h2>Por que escolher este curso?</h2>
     <ul>
