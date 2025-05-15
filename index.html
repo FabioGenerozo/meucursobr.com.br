@@ -1,127 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Curso de Cavaquinho - Do Zero ao Pagode</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #f9f9f9, #fff);
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
       color: #333;
+      line-height: 1.6;
     }
-
-    header {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-
-    header img {
-      max-width: 160px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      margin: 0.2em 0 0.5em;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: #ff5722;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
+    a {
+      color: #d9421b;
       text-decoration: none;
-      transition: background 0.3s;
     }
-
-    .cta-btn:hover {
-      background: #e64a19;
+    a:hover {
+      text-decoration: underline;
     }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    header {
+      background: #d9421b;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    header img.logo {
+      height: 50px;
+    }
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      color: white;
+    }
+    nav a:hover {
+      opacity: 0.8;
+    }
+    .hero {
+      background: url('https://i.imgur.com/2KzPPTA.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      color: white;
+      padding: 0 20px;
+      position: relative;
     }
-
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+    .btn-primary {
+      background-color: #d9421b;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(217, 66, 27, 0.6);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #b83017;
+      box-shadow: 0 8px 20px rgba(184, 48, 23, 0.8);
+    }
+    main {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
     section h2 {
       font-size: 2rem;
-      color: #4CAF50;
+      color: #d9421b;
       margin-bottom: 20px;
+      border-bottom: 3px solid #d9421b;
+      padding-bottom: 6px;
     }
-
-    section ul {
+    ul {
       list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
+      padding-left: 0;
     }
-
-    section ul li {
-      padding: 10px;
-      font-size: 1.1rem;
+    ul li {
+      margin-bottom: 15px;
+      padding-left: 20px;
       position: relative;
-      padding-left: 30px;
+      font-size: 1.1rem;
     }
-
-    section ul li::before {
-      content: '✔';
+    ul li::before {
+      content: "✓";
       position: absolute;
       left: 0;
-      color: #4CAF50;
+      color: #d9421b;
+      font-weight: bold;
     }
-
-    .testimonials p {
+    blockquote {
       font-style: italic;
-      font-size: 1rem;
-      margin: 10px 0;
+      background: #fff3f1;
+      border-left: 6px solid #d9421b;
+      padding: 15px 20px;
+      margin: 15px 0;
+      color: #6d3a2a;
+      font-size: 1.1rem;
+      border-radius: 6px;
     }
-
-    .cta-container button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border: none;
+    .course-modules ul li {
+      background: #fde9e7;
       border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      box-shadow: 0 3px 8px rgba(217,66,27,0.2);
+      color: #a13821;
     }
-
-    .cta-container button:hover {
-      background-color: #388e3c;
-    }
-
-    footer {
-      background-color: #222;
+    .offer-section {
+      background: #d9421b;
       color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(217,66,27,0.5);
+    }
+    .offer-section h2 {
+      color: white;
+      border-color: white;
+      margin-bottom: 20px;
+    }
+    .offer-section p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+    .btn-offer {
+      background-color: white;
+      color: #d9421b;
+      font-weight: 700;
+      padding: 18px 50px;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-offer:hover {
+      background-color: #ffe4dc;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
       font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        width: 100%;
+        text-align: left;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 15px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="https://raw.githubusercontent.com/FabioGenerozo/meucursobr.com.br/main/logo-cavaquinho-blog.png" alt="Logo Meu Curso BR" />
-    <h1>Curso de Cavaquinho - Do Zero ao Pagode</h1>
-    <a class="cta-btn" href="https://pay.hotmart.com/Y46016667V?ref=X99708631N">Quero Aprender Agora!</a>
-  </header>
 
-  <section>
+<header>
+  <img src="https://raw.githubusercontent.com/FabioGenerozo/meucursobr.com.br/4f90050ca41277543da499cdfc02a3cdf387328a/logo-cavaquinho-blog.png" alt="Logo Meu Curso BR" class="logo" />
+  <nav>
+    <a href="#por-que-escolher">Por que escolher</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#sobre-curso">Sobre o curso</a>
+    <a href="#oferta">Oferta</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Curso de Cavaquinho - Do Zero ao Pagode</h1>
+    <p>Aprenda cavaquinho rápido e fácil, mesmo sem experiência!</p>
+    <a href="https://pay.hotmart.com/Y46016667V?ref=X99708631N" class="btn-primary" target="_blank">Quero Aprender Agora!</a>
+  </div>
+</section>
+
+<main>
+  <section id="por-que-escolher">
     <h2>Por que escolher este curso?</h2>
     <ul>
       <li>Aprenda a tocar cavaquinho de forma simples e rápida.</li>
@@ -131,30 +239,35 @@
     </ul>
   </section>
 
-  <section class="testimonials">
+  <section id="depoimentos">
     <h2>O que nossos alunos dizem?</h2>
-    <p>"Esse curso mudou minha vida! Consegui aprender cavaquinho em poucos meses!" – João S.</p>
-    <p>"A didática é excelente e as aulas são muito práticas. Super recomendo!" – Maria P.</p>
+    <blockquote>"Esse curso mudou minha vida! Consegui aprender cavaquinho em poucos meses!" – João S.</blockquote>
+    <blockquote>"A didática é excelente e as aulas são muito práticas. Super recomendo!" – Maria P.</blockquote>
   </section>
 
-  <section>
-    <h2>Conteúdo do Curso</h2>
-    <ul>
-      <li>Módulo 1: Introdução ao Cavaquinho</li>
-      <li>Módulo 2: Aprenda Acordes Simples</li>
-      <li>Módulo 3: Práticas de Ritmo</li>
-      <li>Módulo 4: Tocar Pagode no Cavaquinho</li>
-    </ul>
-    <div class="cta-container">
-      <button onclick="window.location.href='https://pay.hotmart.com/Y46016667V?ref=X99708631N'">
-        Quero Aprender Agora!!
-      </button>
+  <section id="sobre-curso">
+    <h2>Sobre o curso</h2>
+    <p>Aprenda os primeiros acordes, técnicas e músicas populares de cavaquinho com o nosso curso exclusivo!</p>
+    <div class="course-modules">
+      <ul>
+        <li>Módulo 1: Introdução ao Cavaquinho</li>
+        <li>Módulo 2: Aprenda Acordes Simples</li>
+        <li>Módulo 3: Práticas de Ritmo</li>
+        <li>Módulo 4: Tocar Pagode no Cavaquinho</li>
+      </ul>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Meu Curso BR. Todos os direitos reservados.</p>
-  </footer>
-</body>
+  <section id="oferta" class="offer-section">
+    <h2>Oferta Especial</h2>
+    <p>Aproveite o preço promocional para iniciar sua jornada no cavaquinho agora mesmo!</p>
+    <a href="https://pay.hotmart.com/Y46016667V?ref=X99708631N" class="btn-offer" target="_blank">Quero Aprender Agora!!</a>
+  </section>
+</main>
 
+<footer>
+  <p>&copy; 2025 Meu Curso BR. Todos os direitos reservados.</p>
+</footer>
+
+</body>
 </html>
