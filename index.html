@@ -13,7 +13,7 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #d94b1f, #f68e54);
+      background: #f7f7f7;
       color: #333;
       line-height: 1.6;
     }
@@ -45,37 +45,80 @@
       opacity: 0.8;
     }
 
-    /* Letreiro animado */
-    .ticker {
-      background: white;
-      color: #d94b1f;
-      font-weight: 700;
-      overflow: hidden;
-      white-space: nowrap;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin: 20px auto;
-      max-width: 960px;
-      border-radius: 8px;
-      padding: 10px 0;
+    .hero {
+      background: linear-gradient(135deg, #f15a24 0%, #ff8c00 100%);
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      position: relative;
     }
-    .ticker span {
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    }
+    .btn-primary {
+      background-color: #fff;
+      color: #d9421b;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255,255,255,0.6);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #ffe6d9;
+      box-shadow: 0 8px 20px rgba(255,230,217,0.9);
+    }
+
+    .scrolling-text {
+      background: #d9421b;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 12px 0;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 40px;
+      user-select: none;
+    }
+    .scrolling-text span {
       display: inline-block;
       padding-left: 100%;
-      animation: tickerAnim 15s linear infinite;
-      font-size: 1.2rem;
+      animation: scrollLeft 15s linear infinite;
+      white-space: nowrap;
     }
-    @keyframes tickerAnim {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-100%); }
+    .scrolling-text span:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     main {
       max-width: 960px;
-      margin: 40px auto;
+      margin: 0 auto 60px;
       padding: 0 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
       color: #333;
     }
 
@@ -208,14 +251,15 @@
   </nav>
 </header>
 
-<!-- Letreiro animado -->
-<div class="ticker" aria-label="Informações importantes">
+<section class="hero">
+  <h1>Curso de Cavaquinho - Do Zero ao Pagode</h1>
+  <p>Aprenda cavaquinho rápido e fácil, mesmo sem experiência!</p>
+  <a href="https://pay.hotmart.com/Y46016667V?ref=X99708631N" class="btn-primary" target="_blank" rel="noopener noreferrer">Quero Aprender Agora!</a>
+</section>
+
+<div class="scrolling-text" aria-label="Mensagem de destaque animada">
   <span>
-    Garantia de 7 dias &nbsp;&nbsp; • &nbsp;&nbsp;
-    Aulas Gravadas &nbsp;&nbsp; • &nbsp;&nbsp;
-    Acesso Imediato &nbsp;&nbsp; • &nbsp;&nbsp;
-    Suporte Direto &nbsp;&nbsp; • &nbsp;&nbsp;
-    Conteúdo 100% Online &nbsp;&nbsp; • &nbsp;&nbsp;
+    Garantia de satisfação &nbsp;&bull;&nbsp; Aulas gravadas para você assistir quando quiser &nbsp;&bull;&nbsp; Acesso imediato ao curso &nbsp;&bull;&nbsp; Suporte com o professor &nbsp;&bull;&nbsp; Método fácil e prático &nbsp;&bull;&nbsp;
   </span>
 </div>
 
