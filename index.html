@@ -46,7 +46,7 @@
     }
 
     .hero {
-      background: url("https://raw.githubusercontent.com/FabioGenerozo/meucursobr.com.br/4f90050ca41277543da499cdfc02a3cdf387328a/logo-cavaquinho-blog.png") center/cover no-repeat;
+      background: linear-gradient(135deg, #d9421b, #b83017);
       height: 400px;
       display: flex;
       flex-direction: column;
@@ -58,11 +58,7 @@
       position: relative;
     }
     .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
+      content: none;
     }
     .hero-content {
       position: relative;
@@ -98,40 +94,9 @@
       box-shadow: 0 8px 20px rgba(184, 48, 23, 0.8);
     }
 
-    /* Letreiro rolando */
-    .scrolling-banner {
-      background-color: #d9421b; /* laranja */
-      color: white;
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 10px 0;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-    }
-
-    .scrolling-text {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scroll-left 15s linear infinite;
-    }
-
-    .scrolling-text span {
-      margin-right: 50px;
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
     main {
       max-width: 960px;
-      margin: 0 auto 40px auto;
+      margin: 40px auto;
       padding: 0 20px;
     }
 
@@ -273,17 +238,6 @@
 </section>
 
 <main>
-  <!-- Letreiro rolando -->
-  <section class="scrolling-banner">
-    <div class="scrolling-text">
-      <span>30 DIAS DE GARANTIA &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
-      <span>AULAS GRAVADAS &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
-      <span>ACESSO IMEDIATO &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
-      <span>SUPORTE EXCLUSIVO &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
-      <span>PAGAMENTO SEGURO &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
-    </div>
-  </section>
-
   <section id="por-que-escolher">
     <h2>Por que escolher este curso?</h2>
     <ul>
@@ -300,25 +254,28 @@
     <blockquote>"A didática é excelente e as aulas são muito práticas. Super recomendo!" – Maria P.</blockquote>
   </section>
 
-  <section id="sobre-curso" class="course-modules">
-    <h2>O que você vai aprender?</h2>
-    <ul>
-      <li>Módulo 1 - Fundamentos do cavaquinho</li>
-      <li>Módulo 2 - Ritmos básicos e populares</li>
-      <li>Módulo 3 - Técnicas avançadas</li>
-      <li>Módulo 4 - Montagem de repertório</li>
-    </ul>
+  <section id="sobre-curso">
+    <h2>Sobre o curso</h2>
+    <p>Aprenda os primeiros acordes, técnicas e músicas populares de cavaquinho com o nosso curso exclusivo!</p>
+    <div class="course-modules">
+      <ul>
+        <li>Módulo 1: Introdução ao Cavaquinho</li>
+        <li>Módulo 2: Aprenda Acordes Simples</li>
+        <li>Módulo 3: Práticas de Ritmo</li>
+        <li>Módulo 4: Tocar Pagode no Cavaquinho</li>
+      </ul>
+    </div>
   </section>
 
   <section id="oferta" class="offer-section">
     <h2>Oferta Especial</h2>
-    <p>Garanta sua vaga no curso com preço promocional e comece a tocar hoje mesmo!</p>
-    <a href="https://pay.hotmart.com/Y46016667V?ref=X99708631N" class="btn-offer" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
+    <p>Aproveite o preço promocional para iniciar sua jornada no cavaquinho agora mesmo!</p>
+    <a href="https://pay.hotmart.com/Y46016667V?ref=X99708631N" class="btn-offer" target="_blank" rel="noopener noreferrer">Quero Aprender Agora!!</a>
   </section>
 </main>
 
 <footer>
-  &copy; 2025 Meu Curso BR - Todos os direitos reservados.
+  <p>&copy; 2025 Meu Curso BR. Todos os direitos reservados.</p>
 </footer>
 
 </body>
